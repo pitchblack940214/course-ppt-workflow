@@ -10,6 +10,7 @@
 - 把论文整理成课堂论文解读 PPT。
 - 把案例材料整理成案例导入或案例分析 PPT。
 - 把教学大纲压缩成概念、机制、流程、风险和结论。
+- 识别并复用原模板中的校徽、学校标识或机构 logo。
 - 检查 PPT 中是否存在对象越界、图片数量异常等基础版式问题。
 
 ## 核心规则
@@ -20,6 +21,7 @@
 - 正文、逻辑框架和说明文字使用仿宋或宋体。
 - 内容只呈现要点和逻辑，避免“学生理解”“课堂导入”等主语化叙述。
 - 所有文字、图形和图片都必须在页面范围内，避免文字超框、覆盖和错位。
+- 对学校或机构模板，优先从校徽库匹配标识；若模板中校徽由形状和文字组成，则可从四角、页眉或页脚候选区域裁剪复用。
 
 ## 已上传示例
 
@@ -74,6 +76,12 @@ python scripts/validate_ppt_bounds.py examples/output_sample.pptx
 python scripts/extract_style_from_ppt.py path/to/course_template.pptx
 ```
 
+识别或提取模板中的校徽：
+
+```powershell
+python scripts/extract_template_logo.py path/to/template.pptx --school 四川大学 --output assets/logos/sichuan_university_badge_red.png
+```
+
 ## 仓库结构
 
 ```text
@@ -97,6 +105,8 @@ python scripts/extract_style_from_ppt.py path/to/course_template.pptx
 - `scripts/generate_ppt.py`：根据 Markdown 大纲生成可编辑 PPT 示例。
 - `scripts/validate_ppt_bounds.py`：检查 PPT 中是否存在对象越界。
 - `scripts/extract_style_from_ppt.py`：提取 PPT 的页面尺寸、字体和颜色信息。
+- `scripts/extract_template_logo.py`：从校徽库匹配，或从模板四角、页眉、页脚候选区域提取校徽。
+- `assets/logos/`：校徽库，用于更稳定地识别和复用学校标识。
 - `examples/case_briefs/`：案例解读类 PPT 示例。
 - `examples/paper_briefs/`：论文解读类 PPT 与论文示例材料。
 

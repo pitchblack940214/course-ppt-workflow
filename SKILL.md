@@ -21,6 +21,7 @@ Use this skill when creating editable PowerPoint teaching pages from an existing
 1. Read the source course PPT.
    - Extract slide text to identify chapter topic, major concepts, key terms, and existing case wording.
    - Inspect sample slides or screenshots for aspect ratio, title style, palette, footer/decorative lines, card/list conventions, and density.
+   - Identify reusable school or organization logos. Prefer the logo library when a known school is detected; otherwise inspect candidate regions such as top-left, top-right, bottom-left, bottom-right, header, and footer.
 
 2. Build the teaching logic.
    - Slide 1: case introduction, key facts, mechanism or comparison.
@@ -40,6 +41,7 @@ Use this skill when creating editable PowerPoint teaching pages from an existing
    - Use the source deck's accent colors for titles, arrows, card headings, and bottom rules.
    - Use bold SimHei or another bold Heiti-style font for titles.
    - Use FangSong or SimSun for body text and logic-framework text unless the source deck clearly requires a different Chinese body font.
+   - Reuse the source deck's school badge or organization logo when it is part of the template identity.
    - Leave safe margins around all content. For 16:9 slides, keep at least 0.25 in from edges and more near decorative footers.
    - If a card has more than two body lines, enlarge the card, reduce font size, or shorten the wording.
 
