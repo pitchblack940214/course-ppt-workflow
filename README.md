@@ -96,7 +96,6 @@ common fonts, font sizes, and font colors.
 **Key rules**
 
 - Use it before generating a deck from a new course template.
-- Do not upload private course PPTs unless you have permission.
 - Use the extracted style as a guide, not as a replacement for manual visual judgment.
 
 **Reference files**
@@ -129,28 +128,6 @@ This repository includes small examples for showing the workflow.
 ├─ requirements.txt
 └─ README.md
 ```
-
-## Privacy and Copyright
-
-The repository is designed to open-source the workflow, not private teaching
-materials.
-
-Recommended to share:
-
-- Workflow rules and prompt templates.
-- Scripts for generating and validating slides.
-- Desensitized teaching outlines and example PPTs.
-- Paper titles, research themes, and classroom explanation frameworks.
-- Source PDFs only when sharing is permitted.
-
-Avoid sharing:
-
-- Private course PPTs from a university or department.
-- Textbook screenshots or scanned chapters.
-- Paid database downloads without permission.
-- Files containing student information, internal teaching arrangements, or non-public school identifiers.
-
-See [`docs/privacy_and_copyright.md`](docs/privacy_and_copyright.md) for the full note.
 
 ## License
 
