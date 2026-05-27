@@ -86,3 +86,9 @@ python scripts/extract_style_from_ppt.py path/to/course_template.pptx
 ## License
 
 MIT License.
+
+## 打赏
+
+觉得好用可以看心情打赏，谢谢。
+
+![微信支付收款码](assets/wechat_pay.jpg)
