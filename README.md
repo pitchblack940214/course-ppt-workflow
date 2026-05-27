@@ -1,4 +1,4 @@
-# Course PPT Workflow
+﻿# Course PPT Workflow
 
 一个根据原有 PPT 模板进行备课、案例解读和论文分析的 PPT skill。它的目标很朴素：把已有课程课件的风格接住，把论文、案例、教学大纲整理成能直接讲、能继续改、不会乱版的 PowerPoint 页面。
 
@@ -48,7 +48,7 @@
 
 **四川大学答辩风模板效果**
 
-![四川大学答辩风模板效果](examples/paper_briefs/previews/western_land_sea_corridor_scu_template_test.png)
+![四川大学答辩风模板效果](examples/paper_briefs/previews/western_land_sea_corridor_scu_template_test_with_logo.png)
 
 ## 快速开始
 

@@ -1,4 +1,4 @@
-# Paper Brief Examples
+﻿# Paper Brief Examples
 
 本目录存放论文解读类材料。
 
@@ -21,4 +21,4 @@
 
 ### 四川大学答辩风
 
-![四川大学答辩风](previews/western_land_sea_corridor_scu_template_test.png)
+![四川大学答辩风](previews/western_land_sea_corridor_scu_template_test_with_logo.png)
