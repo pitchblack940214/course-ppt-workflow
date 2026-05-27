@@ -91,6 +91,8 @@ MIT License.
 
 Email: `wjy1994211@gmail.com`
 
+有意见和建议欢迎提出。
+
 ## 打赏
 
 觉得好用可以看心情打赏，谢谢。
