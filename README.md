@@ -26,7 +26,7 @@
 ├─ SKILL.md                         # 可复用的备课流程规则
 ├─ prompts/                         # 可直接复制给 AI 的提示词模板
 ├─ scripts/                         # PPT 生成、风格读取和版式检查脚本
-├─ examples/                        # 脱敏示例大纲、论文题名与示例 PPT
+├─ examples/                        # 示例大纲、案例解读 PPT、论文解读 PPT 与授权示例论文
 ├─ templates/                       # 可放置自定义课程模板
 └─ docs/                            # 工作流、版权与隐私说明
 ```
@@ -66,7 +66,8 @@ python scripts/validate_ppt_bounds.py examples/output_sample.pptx
 - 教材截图、CNKI 下载文件、付费数据库材料
 - 含学生信息、教师内部安排或学校内部标识的文件
 
+若确认具有分享权限，也可以在 `examples/paper_briefs/` 中放置少量论文原文示例，并在目录说明中标注来源与用途。
+
 ## 许可证
 
 本项目采用 MIT License。
-

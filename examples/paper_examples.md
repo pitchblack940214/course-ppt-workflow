@@ -41,3 +41,6 @@
 - 第 1 页：数字税困局与治理逻辑转向。
 - 第 2 页：中国方略与包容性发展路径。
 
+示例材料：
+
+- `paper_briefs/global_digital_divide_governance_paper.pdf`
