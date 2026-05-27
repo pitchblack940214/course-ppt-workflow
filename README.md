@@ -28,8 +28,25 @@
 - 案例解读 PPT：`examples/case_briefs/exp1_case_brief.pptx`
 - 论文解读 PPT：`examples/paper_briefs/digital_finance_digital_divide_paper_brief.pptx`
 - 论文 PDF 原文：`examples/paper_briefs/global_digital_divide_governance_paper.pdf`
+- 同一篇论文的不同模板测试：
+  - 通用讲义风：`examples/paper_briefs/western_land_sea_corridor_brief_test.pptx`
+  - 四川大学答辩风：`examples/paper_briefs/western_land_sea_corridor_scu_template_test.pptx`
 
 同时补充了两个目录的 `README.md`，并更新了总说明。
+
+## 测试效果展示
+
+下面两张图来自同一篇论文《开放型通道经济发展模式视角下“西部陆海新通道”发展路径研究》，只是使用了不同 PPT 模板，因此生成效果也不同。这个 skill 更适合在已有 PPT 模板基础上做风格继承，而不是从零设计整套视觉系统。
+
+推荐使用流程：先让 AI 生成 PPT 大纲，明确每页标题、核心要点和逻辑结构；再使用这个 skill 读取原有 PPT 模板并生成可编辑 PPT。
+
+**通用讲义风模板效果**
+
+![通用讲义风模板效果](examples/paper_briefs/previews/western_land_sea_corridor_brief_test.png)
+
+**四川大学答辩风模板效果**
+
+![四川大学答辩风模板效果](examples/paper_briefs/previews/western_land_sea_corridor_scu_template_test.png)
 
 ## 快速开始
 
