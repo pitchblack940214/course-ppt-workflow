@@ -1,0 +1,23 @@
+# Local/private teaching materials
+doc_extract/
+*.pdf
+*.docx
+*.ppt
+
+# Keep generated example decks only when intentionally placed under examples/
+*.pptx
+!templates/*.pptx
+!examples/*.pptx
+
+# Runtime artifacts
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# OS/editor
+Thumbs.db
+.DS_Store
+.vscode/
+
