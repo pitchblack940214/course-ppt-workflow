@@ -1,73 +1,157 @@
-# AI Course PPT Workflow
+# Course PPT Workflow
 
-一个面向高校课程备课的 AI 辅助 PPT 生成流程。它用于把课程 PPT、论文、案例或教学大纲转化为可编辑的教学补充页，并尽量继承原课程课件的色彩、字体、页脚和版式风格。
+> A reusable workflow for turning course slides, paper briefs, teaching cases,
+> and lecture outlines into editable PowerPoint teaching materials.
 
-## 适用场景
+Course PPT Workflow is a small open-source teaching toolkit for instructors who
+prepare Chinese university lectures with AI assistance. It keeps the workflow
+close to real classroom use: inherit the visual style of an existing course
+deck, compress papers or cases into teachable logic, generate editable `.pptx`
+slides, and validate that slide objects stay inside the page.
 
-- 论文导读与课堂案例梳理
-- 章节知识点补充页
-- 开放性课程论文选题说明
-- 金融、国际贸易、数字经济等课程的课堂讲授材料
-- 需要把大纲快速整理为可编辑 PPTX 的备课任务
+本项目用于沉淀一套可复用的高校备课 PPT 流程：根据课程原有 PPT 的色彩、字体、标题位置和页脚风格，将论文、案例或教学大纲整理为可编辑的课堂讲授页，并通过脚本检查版式边界。
 
-## 核心原则
+## Installation
 
-- 输出可编辑 PPTX，而不是整页截图。
-- 标题使用黑体或黑体风格字体，并加粗。
-- 正文、逻辑框架和说明文字使用仿宋或宋体。
-- 继承课程 PPT 的主色调、标题位置、页脚线和讲义式密度。
-- 所有文字、图形、图片必须在页面范围内。
-- 真实课程 PPT、教材截图和论文 PDF 不应直接开源；示例应尽量脱敏或改写。
+Clone the repository:
 
-## 仓库结构
-
-```text
-.
-├─ SKILL.md                         # 可复用的备课流程规则
-├─ prompts/                         # 可直接复制给 AI 的提示词模板
-├─ scripts/                         # PPT 生成、风格读取和版式检查脚本
-├─ examples/                        # 示例大纲、案例解读 PPT、论文解读 PPT 与授权示例论文
-├─ templates/                       # 可放置自定义课程模板
-└─ docs/                            # 工作流、版权与隐私说明
+```powershell
+git clone https://github.com/pitchblack940214/course-ppt-workflow.git
+cd course-ppt-workflow
 ```
 
-## 快速开始
-
-安装依赖：
+Install the Python dependencies:
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-生成脱敏示例 PPT：
+Generate the sample deck:
 
 ```powershell
 python scripts/generate_ppt.py --outline examples/input_outline.md --output examples/output_sample.pptx
 ```
 
-检查 PPT 是否有元素越界：
+Validate slide bounds:
 
 ```powershell
 python scripts/validate_ppt_bounds.py examples/output_sample.pptx
 ```
 
-## 开源边界
+## Workflow Index
 
-本仓库建议开源：
+### `course-ppt-case-brief`
 
-- 备课流程、提示词、脚本和脱敏示例
-- 论文题名、研究主题和课堂梳理框架
-- 自行生成或无版权风险的示意图
+**What it does**
 
-不建议开源：
+Creates editable PowerPoint teaching supplements from a course deck plus a case,
+article, paper, or lecture outline.
 
-- 学校课程原始 PPT
-- 论文 PDF 原文
-- 教材截图、CNKI 下载文件、付费数据库材料
-- 含学生信息、教师内部安排或学校内部标识的文件
+**Typical use cases**
 
-若确认具有分享权限，也可以在 `examples/paper_briefs/` 中放置少量论文原文示例，并在目录说明中标注来源与用途。
+- Convert a research paper into two teaching slides.
+- Explain a case through concepts from the course PPT.
+- Turn a lecture outline into a compact 2-4 page supplement.
+- Prepare assignment instructions or course-paper topics in the same visual style as the course deck.
 
-## 许可证
+**Key rules**
 
-本项目采用 MIT License。
+- Output editable `.pptx`, not full-slide screenshots.
+- Inherit the source course deck's color palette, title placement, footer line, and teaching density.
+- Use bold SimHei or Heiti-style fonts for titles.
+- Use FangSong or SimSun for body text and logic-framework text.
+- Keep every text box, shape, line, arrow, and image inside the slide canvas.
+- Avoid classroom narration such as "students should understand"; show points and logic directly.
+
+**Reference files**
+
+- [`SKILL.md`](SKILL.md)
+- [`prompts/course_ppt_case_brief.md`](prompts/course_ppt_case_brief.md)
+- [`prompts/outline_to_teaching_slides.md`](prompts/outline_to_teaching_slides.md)
+
+### `ppt-layout-validation`
+
+**What it does**
+
+Checks whether a generated `.pptx` has objects outside the slide canvas and
+summarizes text and picture counts per slide.
+
+**Key rules**
+
+- Run after every generated deck.
+- Treat object-bound checks as a first pass; manual visual review is still needed for text overflow.
+- Use picture counts to confirm whether a page is image-assisted or fully text/shape based.
+
+**Reference files**
+
+- [`scripts/validate_ppt_bounds.py`](scripts/validate_ppt_bounds.py)
+
+### `style-extraction`
+
+**What it does**
+
+Prints a lightweight style summary from a course PPT, including slide size,
+common fonts, font sizes, and font colors.
+
+**Key rules**
+
+- Use it before generating a deck from a new course template.
+- Do not upload private course PPTs unless you have permission.
+- Use the extracted style as a guide, not as a replacement for manual visual judgment.
+
+**Reference files**
+
+- [`scripts/extract_style_from_ppt.py`](scripts/extract_style_from_ppt.py)
+
+## Examples
+
+This repository includes small examples for showing the workflow.
+
+| Folder | Content |
+| --- | --- |
+| [`examples/case_briefs`](examples/case_briefs) | Case-brief PPT examples |
+| [`examples/paper_briefs`](examples/paper_briefs) | Paper-brief PPT examples and selected source material |
+| [`examples/input_outline.md`](examples/input_outline.md) | A public outline used by the sample generator |
+| [`examples/output_sample.pptx`](examples/output_sample.pptx) | A generated editable sample deck |
+
+## Repository Layout
+
+```text
+.
+├─ SKILL.md
+├─ prompts/
+├─ scripts/
+├─ examples/
+│  ├─ case_briefs/
+│  └─ paper_briefs/
+├─ templates/
+├─ docs/
+├─ requirements.txt
+└─ README.md
+```
+
+## Privacy and Copyright
+
+The repository is designed to open-source the workflow, not private teaching
+materials.
+
+Recommended to share:
+
+- Workflow rules and prompt templates.
+- Scripts for generating and validating slides.
+- Desensitized teaching outlines and example PPTs.
+- Paper titles, research themes, and classroom explanation frameworks.
+- Source PDFs only when sharing is permitted.
+
+Avoid sharing:
+
+- Private course PPTs from a university or department.
+- Textbook screenshots or scanned chapters.
+- Paid database downloads without permission.
+- Files containing student information, internal teaching arrangements, or non-public school identifiers.
+
+See [`docs/privacy_and_copyright.md`](docs/privacy_and_copyright.md) for the full note.
+
+## License
+
+MIT License.
