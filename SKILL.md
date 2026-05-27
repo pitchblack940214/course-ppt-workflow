@@ -10,7 +10,7 @@ Use this skill when creating editable PowerPoint teaching pages from an existing
 ## Output Contract
 
 - Create a standalone `.pptx`.
-- Default to exactly 2 slides per case/article/paper unless the user requests another count.
+- For one paper, usually create 2-4 slides depending on content complexity; use 2 slides for short briefs and 3-4 slides for papers with richer theory, methods, findings, or implications.
 - The deck must be editable: use text boxes, shapes, lines, arrows, and native PowerPoint elements.
 - Do not use a full-slide screenshot or full-slide image as the slide.
 - Preserve the source deck's visual grammar: slide size, dominant colors, title placement, footers, decorative bars, typography feel, and content density.
