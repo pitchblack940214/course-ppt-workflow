@@ -87,6 +87,10 @@ python scripts/extract_style_from_ppt.py path/to/course_template.pptx
 
 MIT License.
 
+## 联系方式
+
+Email: `wjy1994211@gmail.com`
+
 ## 打赏
 
 觉得好用可以看心情打赏，谢谢。
