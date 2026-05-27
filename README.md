@@ -1,119 +1,63 @@
 # Course PPT Workflow
 
-> A reusable workflow for turning course slides, paper briefs, teaching cases,
-> and lecture outlines into editable PowerPoint teaching materials.
+一个根据原有 PPT 模板进行备课、案例解读和论文分析的 PPT skill。它的目标很朴素：把已有课程课件的风格接住，把论文、案例、教学大纲整理成能直接讲、能继续改、不会乱版的 PowerPoint 页面。
 
-Course PPT Workflow is a small open-source teaching toolkit for instructors who
-prepare Chinese university lectures with AI assistance. It keeps the workflow
-close to real classroom use: inherit the visual style of an existing course
-deck, compress papers or cases into teachable logic, generate editable `.pptx`
-slides, and validate that slide objects stay inside the page.
+也可以把它理解为一个“研究生组会救星”：给它一份原有 PPT 模板和一篇论文/一个案例/一段大纲，它会尽量生成符合原模板色彩、字体、页脚和内容密度的可编辑 PPT，而不是把整页做成图片。
 
-本项目用于沉淀一套可复用的高校备课 PPT 流程：根据课程原有 PPT 的色彩、字体、标题位置和页脚风格，将论文、案例或教学大纲整理为可编辑的课堂讲授页，并通过脚本检查版式边界。
+## 可以做什么
 
-## Installation
+- 根据课程原有 PPT 模板生成备课补充页。
+- 把论文整理成课堂论文解读 PPT。
+- 把案例材料整理成案例导入或案例分析 PPT。
+- 把教学大纲压缩成概念、机制、流程、风险和结论。
+- 检查 PPT 中是否存在对象越界、图片数量异常等基础版式问题。
 
-Clone the repository:
+## 核心规则
 
-```powershell
-git clone https://github.com/pitchblack940214/course-ppt-workflow.git
-cd course-ppt-workflow
-```
+- 继承原 PPT 的页面比例、主色调、标题位置、页脚线和讲义式密度。
+- 输出可编辑 `.pptx`，使用文本框、形状、线条、箭头和原生 PowerPoint 元素。
+- 标题使用黑体或黑体风格字体，并加粗。
+- 正文、逻辑框架和说明文字使用仿宋或宋体。
+- 内容只呈现要点和逻辑，避免“学生理解”“课堂导入”等主语化叙述。
+- 所有文字、图形和图片都必须在页面范围内，避免文字超框、覆盖和错位。
 
-Install the Python dependencies:
+## 已上传示例
+
+已经按内容类型整理了示例材料：
+
+- 案例解读 PPT：`examples/case_briefs/exp1_case_brief.pptx`
+- 论文解读 PPT：`examples/paper_briefs/digital_finance_digital_divide_paper_brief.pptx`
+- 论文 PDF 原文：`examples/paper_briefs/global_digital_divide_governance_paper.pdf`
+
+同时补充了两个目录的 `README.md`，并更新了总说明。
+
+## 快速开始
+
+安装依赖：
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-Generate the sample deck:
+根据示例大纲生成 PPT：
 
 ```powershell
 python scripts/generate_ppt.py --outline examples/input_outline.md --output examples/output_sample.pptx
 ```
 
-Validate slide bounds:
+检查 PPT 元素是否越界：
 
 ```powershell
 python scripts/validate_ppt_bounds.py examples/output_sample.pptx
 ```
 
-## Workflow Index
+读取一个 PPT 的基础风格信息：
 
-### `course-ppt-case-brief`
+```powershell
+python scripts/extract_style_from_ppt.py path/to/course_template.pptx
+```
 
-**What it does**
-
-Creates editable PowerPoint teaching supplements from a course deck plus a case,
-article, paper, or lecture outline.
-
-**Typical use cases**
-
-- Convert a research paper into two teaching slides.
-- Explain a case through concepts from the course PPT.
-- Turn a lecture outline into a compact 2-4 page supplement.
-- Prepare assignment instructions or course-paper topics in the same visual style as the course deck.
-
-**Key rules**
-
-- Output editable `.pptx`, not full-slide screenshots.
-- Inherit the source course deck's color palette, title placement, footer line, and teaching density.
-- Use bold SimHei or Heiti-style fonts for titles.
-- Use FangSong or SimSun for body text and logic-framework text.
-- Keep every text box, shape, line, arrow, and image inside the slide canvas.
-- Avoid classroom narration such as "students should understand"; show points and logic directly.
-
-**Reference files**
-
-- [`SKILL.md`](SKILL.md)
-- [`prompts/course_ppt_case_brief.md`](prompts/course_ppt_case_brief.md)
-- [`prompts/outline_to_teaching_slides.md`](prompts/outline_to_teaching_slides.md)
-
-### `ppt-layout-validation`
-
-**What it does**
-
-Checks whether a generated `.pptx` has objects outside the slide canvas and
-summarizes text and picture counts per slide.
-
-**Key rules**
-
-- Run after every generated deck.
-- Treat object-bound checks as a first pass; manual visual review is still needed for text overflow.
-- Use picture counts to confirm whether a page is image-assisted or fully text/shape based.
-
-**Reference files**
-
-- [`scripts/validate_ppt_bounds.py`](scripts/validate_ppt_bounds.py)
-
-### `style-extraction`
-
-**What it does**
-
-Prints a lightweight style summary from a course PPT, including slide size,
-common fonts, font sizes, and font colors.
-
-**Key rules**
-
-- Use it before generating a deck from a new course template.
-- Use the extracted style as a guide, not as a replacement for manual visual judgment.
-
-**Reference files**
-
-- [`scripts/extract_style_from_ppt.py`](scripts/extract_style_from_ppt.py)
-
-## Examples
-
-This repository includes small examples for showing the workflow.
-
-| Folder | Content |
-| --- | --- |
-| [`examples/case_briefs`](examples/case_briefs) | Case-brief PPT examples |
-| [`examples/paper_briefs`](examples/paper_briefs) | Paper-brief PPT examples and selected source material |
-| [`examples/input_outline.md`](examples/input_outline.md) | A public outline used by the sample generator |
-| [`examples/output_sample.pptx`](examples/output_sample.pptx) | A generated editable sample deck |
-
-## Repository Layout
+## 仓库结构
 
 ```text
 .
@@ -128,6 +72,16 @@ This repository includes small examples for showing the workflow.
 ├─ requirements.txt
 └─ README.md
 ```
+
+## 文件说明
+
+- `SKILL.md`：备课 PPT skill 的核心规则。
+- `prompts/`：可直接复用或改写的提示词。
+- `scripts/generate_ppt.py`：根据 Markdown 大纲生成可编辑 PPT 示例。
+- `scripts/validate_ppt_bounds.py`：检查 PPT 中是否存在对象越界。
+- `scripts/extract_style_from_ppt.py`：提取 PPT 的页面尺寸、字体和颜色信息。
+- `examples/case_briefs/`：案例解读类 PPT 示例。
+- `examples/paper_briefs/`：论文解读类 PPT 与论文示例材料。
 
 ## License
 

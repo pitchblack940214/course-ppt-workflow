@@ -1,11 +1,11 @@
 ---
-name: course-ppt-case-brief
-description: Create editable PowerPoint teaching supplements from a course deck plus a case, article, paper, or teaching outline; inherit the source course deck style and enforce no text overflow.
+name: course-ppt-workflow
+description: Create editable PowerPoint decks for lesson preparation, case briefings, and paper analysis from an existing PPT template; inherit the source deck style and prevent text overflow.
 ---
 
-# Course PPT Case Brief
+# Course PPT Workflow
 
-Use this skill when creating editable PowerPoint teaching pages from a course PPT plus a case, article, paper, or outline.
+Use this skill when creating editable PowerPoint teaching pages from an existing PPT template plus a case, article, paper, or teaching outline. It is designed for lecture preparation, case analysis, paper briefings, and graduate seminar presentations.
 
 ## Output Contract
 
@@ -49,4 +49,3 @@ Use this skill when creating editable PowerPoint teaching pages from a course PP
    - Verify every object lies inside the slide canvas.
    - Manually reason about text fit: object bounds are not enough.
    - If overlap appears, repair the affected slide and rerun object-bound checks.
-
