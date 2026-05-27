@@ -91,4 +91,4 @@ MIT License.
 
 觉得好用可以看心情打赏，谢谢。
 
-![微信支付收款码](assets/wechat_pay.jpg)
+<img src="assets/wechat_pay.jpg" alt="微信支付收款码" width="50%">
