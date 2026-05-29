@@ -11,6 +11,7 @@
 - 把案例材料整理成案例导入或案例分析 PPT。
 - 把教学大纲压缩成概念、机制、流程、风险和结论。
 - 识别并复用原模板中的校徽、学校标识或机构 logo。
+- 先做生成前检查和 PPT 大纲，再进入模板化排版。
 - 检查 PPT 中是否存在对象越界、图片数量异常等基础版式问题。
 
 ## 核心规则
@@ -22,6 +23,7 @@
 - 内容只呈现要点和逻辑，避免“学生理解”“课堂导入”等主语化叙述。
 - 所有文字、图形和图片都必须在页面范围内，避免文字超框、覆盖和错位。
 - 对学校或机构模板，优先从校徽库匹配标识；若模板中校徽由形状和文字组成，则可从四角、页眉或页脚候选区域裁剪复用。
+- 借鉴 Kami 的运行纪律：Contract、Intent、Materials、Distill、Outline、Compose、QA，而不是固定使用某一种视觉风格。
 
 ## 已上传示例
 
@@ -41,6 +43,20 @@
 下面两张图来自同一篇论文《开放型通道经济发展模式视角下“西部陆海新通道”发展路径研究》，只是使用了不同 PPT 模板，因此生成效果也不同。这个 skill 更适合在已有 PPT 模板基础上做风格继承，而不是从零设计整套视觉系统。
 
 推荐使用流程：先让 AI 生成 PPT 大纲，明确每页标题、核心要点和逻辑结构；再使用这个 skill 读取原有 PPT 模板并生成可编辑 PPT。
+
+## 运行逻辑
+
+本项目吸收了 Kami 的“先约束、后生成”思路，但保留自身定位：围绕已有 PPT 模板生成可编辑课件。
+
+```text
+材料输入 -> Contract -> Intent -> Materials -> Distill -> Outline -> Compose -> QA
+```
+
+推荐三种模式：
+
+- **案例导入**：2-3 页，强调事实冲突、课程概念和讨论问题。
+- **论文精读**：5-8 页，强调研究问题、结论概览、机制链条、证据、风险和讨论。
+- **课程补充/备课**：3-5 页，强调概念框架、流程机制、例题或案例、教学总结。
 
 **通用讲义风模板效果**
 
@@ -106,6 +122,8 @@ python scripts/extract_template_logo.py path/to/template.pptx --school 四川大
 - `scripts/validate_ppt_bounds.py`：检查 PPT 中是否存在对象越界。
 - `scripts/extract_style_from_ppt.py`：提取 PPT 的页面尺寸、字体和颜色信息。
 - `scripts/extract_template_logo.py`：从校徽库匹配，或从模板四角、页眉、页脚候选区域提取校徽。
+- `scripts/validate_deck_quality.py`：检查越界、图片数量和常见反模式。
+- `docs/kami_inspired_workflow.md`：说明吸收 Kami 运行纪律后的工作流。
 - `assets/logos/`：校徽库，用于更稳定地识别和复用学校标识。
 - `examples/case_briefs/`：案例解读类 PPT 示例。
 - `examples/paper_briefs/`：论文解读类 PPT 与论文示例材料。
