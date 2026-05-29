@@ -1,6 +1,10 @@
 ﻿# Course PPT Workflow
 
-一个根据原有 PPT 模板进行备课、案例解读和论文分析的 PPT skill。它的目标很朴素：把已有课程课件的风格接住，把论文、案例、教学大纲整理成能直接讲、能继续改、不会乱版的 PowerPoint 页面。
+作者背景：四川大学公共管理学院公共政策博士，目前为西南大学商贸学院青年教师。因此，本 skill 的问题意识、案例选择和默认讲解方式可能更适合人文社会科学方向。
+
+一个根据原有 PPT 模板进行备课、案例解读和论文分析的 PPT skill。它更适用于人文社会科学领域，尤其是公共管理、社会学、经济学、政治学、教育学、法学、马克思主义理论、区域发展和数字经济等课程或组会场景。
+
+它的目标很朴素：把已有课程课件的风格接住，把论文、案例、教学大纲整理成能直接讲、能继续改、不会乱版的 PowerPoint 页面。
 
 也可以把它理解为一个“研究生组会救星”：给它一份原有 PPT 模板和一篇论文/一个案例/一段大纲，它会尽量生成符合原模板色彩、字体、页脚和内容密度的可编辑 PPT，而不是把整页做成图片。
 
@@ -24,7 +28,6 @@
 - 内容只呈现要点和逻辑，避免“学生理解”“课堂导入”等主语化叙述。
 - 所有文字、图形和图片都必须在页面范围内，避免文字超框、覆盖和错位。
 - 对学校或机构模板，优先从校徽库匹配标识；若模板中校徽由形状和文字组成，则可从四角、页眉或页脚候选区域裁剪复用。
-- 借鉴 Kami 的运行纪律：Contract、Intent、Materials、Distill、Outline、Compose、QA，而不是固定使用某一种视觉风格。
 - 对论文原文中的核心理论模型图，优先保留原图作为视觉证据，并在旁边解释主体、关系箭头和理论含义。
 
 ## 已上传示例
@@ -34,39 +37,37 @@
 - 案例解读 PPT：`examples/case_briefs/exp1_case_brief.pptx`
 - 论文解读 PPT：`examples/paper_briefs/digital_finance_digital_divide_paper_brief.pptx`
 - 论文 PDF 原文：`examples/paper_briefs/global_digital_divide_governance_paper.pdf`
-- 同一篇论文的不同模板测试：
-  - 通用讲义风：`examples/paper_briefs/western_land_sea_corridor_brief_test.pptx`
-  - 四川大学答辩风：`examples/paper_briefs/western_land_sea_corridor_scu_template_test.pptx`
+- 模板测试：
+  - 通用讲义风：《开放型通道经济发展模式视角下“西部陆海新通道”发展路径研究》测试 PPT，`examples/paper_briefs/western_land_sea_corridor_brief_test.pptx`
+  - 四川大学答辩风：《政府内部上下级部门间谈判：一个分析模型》5 页论文汇报测试 PPT，`examples/paper_briefs/government_internal_negotiation_scu_template.pptx`
 
 同时补充了两个目录的 `README.md`，并更新了总说明。
 
 ## 测试效果展示
 
-下面两张图来自同一篇论文《开放型通道经济发展模式视角下“西部陆海新通道”发展路径研究》，只是使用了不同 PPT 模板，因此生成效果也不同。这个 skill 更适合在已有 PPT 模板基础上做风格继承，而不是从零设计整套视觉系统。
+下面展示的是人文社会科学论文《政府内部上下级部门间谈判：一个分析模型》的 5 页论文汇报测试效果，使用四川大学答辩风模板生成。该示例突出本项目更适合处理社科论文中的理论命题、分析框架、模型图、机制解释和讨论问题。
 
 推荐使用流程：先让 AI 生成 PPT 大纲，明确每页标题、核心要点和逻辑结构；再使用这个 skill 读取原有 PPT 模板并生成可编辑 PPT。
 
-## 运行逻辑
+**第 1 页：核心判断**
 
-本项目吸收了 Kami 的“先约束、后生成”思路，但保留自身定位：围绕已有 PPT 模板生成可编辑课件。
+![政府内部上下级部门间谈判 第1页](examples/paper_briefs/previews/gov_negotiation_scu/slide_1.png)
 
-```text
-材料输入 -> Contract -> Intent -> Materials -> Distill -> Outline -> Compose -> QA
-```
+**第 2 页：问题背景**
 
-推荐三种模式：
+![政府内部上下级部门间谈判 第2页](examples/paper_briefs/previews/gov_negotiation_scu/slide_2.png)
 
-- **案例导入**：2-3 页，强调事实冲突、课程概念和讨论问题。
-- **论文精读**：5-8 页，强调研究问题、结论概览、机制链条、证据、风险和讨论。
-- **课程补充/备课**：3-5 页，强调概念框架、流程机制、例题或案例、教学总结。
+**第 3 页：理论模型图与解释**
 
-**通用讲义风模板效果**
+![政府内部上下级部门间谈判 第3页](examples/paper_briefs/previews/gov_negotiation_scu/slide_3.png)
 
-![通用讲义风模板效果](examples/paper_briefs/previews/western_land_sea_corridor_brief_test.png)
+**第 4 页：策略机制**
 
-**四川大学答辩风模板效果**
+![政府内部上下级部门间谈判 第4页](examples/paper_briefs/previews/gov_negotiation_scu/slide_4.png)
 
-![四川大学答辩风模板效果](examples/paper_briefs/previews/western_land_sea_corridor_scu_template_test_with_logo.png)
+**第 5 页：讨论与启示**
+
+![政府内部上下级部门间谈判 第5页](examples/paper_briefs/previews/gov_negotiation_scu/slide_5.png)
 
 ## 快速开始
 
@@ -125,7 +126,7 @@ python scripts/extract_template_logo.py path/to/template.pptx --school 四川大
 - `scripts/extract_style_from_ppt.py`：提取 PPT 的页面尺寸、字体和颜色信息。
 - `scripts/extract_template_logo.py`：从校徽库匹配，或从模板四角、页眉、页脚候选区域提取校徽。
 - `scripts/validate_deck_quality.py`：检查越界、图片数量和常见反模式。
-- `docs/kami_inspired_workflow.md`：说明吸收 Kami 运行纪律后的工作流。
+- `docs/kami_inspired_workflow.md`：记录生成前检查、大纲优先和质量检查等工作流设计。
 - `assets/logos/`：校徽库，用于更稳定地识别和复用学校标识。
 - `examples/case_briefs/`：案例解读类 PPT 示例。
 - `examples/paper_briefs/`：论文解读类 PPT 与论文示例材料。
@@ -139,6 +140,10 @@ MIT License.
 Email: `wjy1994211@gmail.com`
 
 有意见和建议欢迎提出。
+
+## 参考
+
+本项目在工作流设计上参考了开源项目 [Kami](https://github.com/tw93/Kami) 的部分逻辑，例如生成前约束确认、材料检查、大纲优先和质量检查；视觉风格仍以用户提供的原有 PPT 模板为准。
 
 ## 打赏
 
