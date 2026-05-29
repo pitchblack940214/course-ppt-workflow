@@ -33,6 +33,8 @@ Use this skill when creating editable PowerPoint teaching pages from an existing
 
 4. Distill before composing.
    - Extract the core problem, key concepts, mechanism chain, evidence, risk boundary, and discussion value.
+   - If the paper contains analysis framework diagrams, theoretical model diagrams, mechanism figures, or conceptual models, select the single most central figure for the PPT.
+   - Explain the selected figure in teaching language: what each actor/concept means, how arrows or layers work, and what theoretical conclusion the figure supports.
    - For papers, prefer generating an outline first before creating the PPT.
 
 5. Build the teaching logic.
@@ -40,6 +42,7 @@ Use this skill when creating editable PowerPoint teaching pages from an existing
    - Slide 2: course-concept explanation, process decomposition, risk boundary or policy implication.
    - For 3+ pages, use a progression such as definition -> practice -> risk/extension.
    - For seminar-style paper reading, use 5-8 slides: title/core claim -> problem/background -> conclusion overview -> mechanism/framework -> evidence -> implications -> discussion.
+   - When a core theory/model figure exists, reserve one slide for "model figure + explanation" or integrate it into the mechanism/framework slide.
 
 6. Text rules.
    - Present only points and logic.
@@ -56,6 +59,7 @@ Use this skill when creating editable PowerPoint teaching pages from an existing
    - Use FangSong or SimSun for body text and logic-framework text unless the source deck clearly requires a different Chinese body font.
    - Reuse the source deck's school badge or organization logo when it is part of the template identity.
    - Choose diagram forms by relationship: mechanism chain, comparison table, path map, timeline, risk chain, or quadrant.
+   - For source-paper framework/model figures, keep the original figure as visual evidence when it is readable; place concise explanation boxes around it instead of redrawing everything.
    - Leave safe margins around all content. For 16:9 slides, keep at least 0.25 in from edges and more near decorative footers.
    - If a card has more than two body lines, enlarge the card, reduce font size, or shorten the wording.
 
