@@ -99,6 +99,12 @@ python scripts/generate_ppt.py --outline examples/input_outline.md --output exam
 python scripts/validate_ppt_bounds.py examples/output_sample.pptx
 ```
 
+检查生成 PPT 的综合质量：
+
+```powershell
+python scripts/validate_deck_quality.py examples/output_sample.pptx
+```
+
 读取一个 PPT 的基础风格信息：
 
 ```powershell
@@ -135,7 +141,7 @@ python scripts/extract_template_logo.py path/to/template.pptx --school 四川大
 - `scripts/validate_ppt_bounds.py`：检查 PPT 中是否存在对象越界。
 - `scripts/extract_style_from_ppt.py`：提取 PPT 的页面尺寸、字体和颜色信息。
 - `scripts/extract_template_logo.py`：从校徽库匹配，或从模板四角、页眉、页脚候选区域提取校徽。
-- `scripts/validate_deck_quality.py`：检查越界、图片数量和常见反模式。
+- `scripts/validate_deck_quality.py`：综合检查文字超框、对象越界、整页截图式页面和空洞总结。
 - `docs/kami_inspired_workflow.md`：记录生成前检查、大纲优先和质量检查等工作流设计。
 - `assets/logos/`：校徽库，用于更稳定地识别和复用学校标识。
 - `examples/case_briefs/`：案例解读类 PPT 示例。
